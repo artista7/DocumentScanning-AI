@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Basic Handler | Jcrop Demo</title>
+  <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+  <script src="../js/jquery.min.js"></script>
+  <script src="../js/jquery.Jcrop.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="../js/script.js"></script>
+  <link rel="stylesheet" href="demo_files/main.css" type="text/css" />
+  <link rel="stylesheet" href="demo_files/demos.css" type="text/css" />
+  <link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
+</head>
+
+<body>
+
+  <div ng-app="myApp" ng-controller="myCtrl" class="container">
+    <div class="row">
+      <div class="span8">
+        <!-- This is the image we're attaching Jcrop to -->
+        <img src="demo_files/concho-plains-tank.jpg" style="height: 800px; width: 600px" id="target" />
+      </div>
+
+      <div class="span4">
+        <form onsubmit="return false;" action="http://example.com/post.php">
+          <div>
+            <input type="text" placeholder="AttrId" ng-model="addMe.attrId" />
+            <select ng-options="i for i in ['label', 'Value']" ng-model="selectedType">
+            </select>
+            <input type="text" placeholder="Text" ng-show="selectedType === 'label'" ng-model="addMe.label.text" />
+            <input type="text" placeholder="Text" ng-show="selectedType !== 'label'" ng-model="addMe.value.text" />
+            <input type="text" size="1" id="s1" name="s1" ng-show="selectedType === 'label'" ng-model="addMe.label.rect.x" />
+            <input type="text" size="1" id="s1" name="s1" ng-show="selectedType !== 'label'" ng-model="addMe.value.rect.x" />
+          </div>
+          <div>
+            <button ng-click="addItem()">Add/update</button>
+            <button ng-click="reset()">Reset</button>
+          </div>
+        </form>
+        <div ng-repeat="attrGroup in attrGroups">
+          <label>{{attrGroup.attrId}} {{attrGroup.label}} {{attrGroup.value}}</label>
+        </div>
+        <div>addMe - {{addMe}}</div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+
+</html>
