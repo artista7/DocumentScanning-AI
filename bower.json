@@ -1,0 +1,18 @@
+{
+  "name": "CroppingProject",
+  "version": "0.1.0",
+  "description": "Tool using Jquery JCrop",
+  "main": [
+    "js/jquery.Jcrop.js",
+    "css/jquery.Jcrop.css"
+  ],
+  "keywords": [ "img", "image", "form", "crop", "cropping", "cropper" ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "build",
+    "demos",
+    "node_modules",
+    "bower_components"
+  ]
+}
