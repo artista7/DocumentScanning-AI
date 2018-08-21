@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Basic Handler | Jcrop Demo</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.Jcrop.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/jquery.Jcrop.css" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../js/script_3.js"></script>
+    <style>
+        table {
+            width: 100%;
+        }
+
+        th {
+            text-align: center;
+            padding: 2.5px;
+        }
+
+        table,
+        td {
+            border: 1px solid grey;
+            border-collapse: collapse;
+            padding: 2.5px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div ng-app="myApp" ng-controller="myCtrl" class="container-fluid">
+        <div class="row">
+                <div class="col-sm-2" style="padding-top: 20px; height: 400px;">
+                    <div ng-repeat="attGroup in outTxt.attrGroups">
+                        {{attGroup.label.text}}
+                    </div>
+                </div>
+
+                <div class="col-sm-3" style="padding-top: 20px; height: 400px;">
+                        <div ng-repeat="attGroup in outTxt.attrGroups">
+                                {{attGroup.value.description}}
+                        </div>
+                    </div>
+            </div>
+    </div>
+
+</body>
+
+</html>
